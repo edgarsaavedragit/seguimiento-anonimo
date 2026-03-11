@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegir Identidad - Sistema Psicológico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/patient-styles.css">
+</head>
+
+<body>
+    <div class="patient-container">
+        <div class="patient-header">
+            <h1>🎭 Elige Tu Identidad Secreta</h1>
+            <p class="patient-subtitle">
+                Selecciona un seudónimo que te represente durante tu seguimiento psicológico.
+                Tu identidad real permanecerá anónima.
+            </p>
+        </div>
+
+        <!-- Token de invitación (si viene en la URL) -->
+        <div id="tokenSection" class="token-section" style="display: none;">
+            <h3>🔗 Enlace de Invitación Válido</h3>
+            <p>Tu psicóloga te ha invitado a participar en el seguimiento. Ahora elige tu identidad secreta.</p>
+            <input type="hidden" id="invitationToken">
+        </div>
+
+        <div class="pseudonyms-section">
+            <h2>Seudónimos Disponibles</h2>
+            <p class="section-description">
+                Cada seudónimo tiene una energía única. Elige el que mejor te represente en este momento.
+                Una vez elegido, este nombre será tu identidad durante todo el proceso.
+            </p>
+
+            <div class="pseudonyms-grid" id="pseudonymsGrid">
+                <!-- Los seudónimos se cargarán con JavaScript -->
+                <div class="loading">Cargando seudónimos disponibles...</div>
+            </div>
+
+            <div class="action-controls">
+                <button id="continueBtn" class="btn btn-primary btn-continue" disabled>
+                    Selecciona un seudónimo para continuar
+                </button>
+
+                <form id="linkPseudonymForm" style="display: none;">
+                    <input type="hidden" id="selectedPseudonymId">
+                </form>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>¿Por qué elegir un seudónimo?</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🛡️</div>
+                    <h4>Protección</h4>
+                    <p>Tu identidad real permanece segura y privada.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🌟</div>
+                    <h4>Libertad</h4>
+                    <p>Puedes expresarte con mayor honestidad.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🔒</div>
+                    <h4>Confidencialidad</h4>
+                    <p>Solo tu psicóloga sabe tu identidad real.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🔄</div>
+                    <h4>Flexibilidad</h4>
+                    <p>Puedes cambiar de seudónimo si lo necesitas.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Sistema seguro y confidencial | Tu privacidad es nuestra prioridad</p>
+        </footer>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/patient.js"></script>
+   <script src="../../js/choose-identity.js"></script>
+</body>
+
+</html>

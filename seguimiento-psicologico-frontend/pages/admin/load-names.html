@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Seudónimos - Panel Psicóloga</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin-styles.css">
+</head>
+
+<body>
+    <!-- VERIFICACIÓN INMEDIATA -->
+    <script>
+        if (localStorage.getItem('psychologistLoggedIn') !== 'true') {
+            window.location.href = '../auth/login.html';
+        }
+    </script>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <img src="/assets/icons/psicologia.svg" alt="Psicología" class="nav-icon">
+                    <div>
+                        <h3>Psicóloga Sofi</h3>
+                        <p class="user-role">Administradora</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <img src="/assets/icons/dashboard.svg" alt="Dashboard" class="nav-icon">
+                    Dashboard
+                </a>
+                <a href="load-names.html" class="nav-item active">
+                    <img src="/assets/icons/seudonimo.svg" alt="seudonimo" class="nav-icon"> 
+                    Cargar Seudónimos
+                </a>
+                <a href="register-patient.html" class="nav-item">
+                    <img src="/assets/icons/paciente.svg" alt="Paciente" class="nav-icon">
+                    Registrar Paciente
+                </a>
+                <a href="semaphore.html" class="nav-item">
+                    <img src="/assets/icons/semaphore.png" alt="Semáforo" class="nav-icon">
+                    Semáforo de Riesgo
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <img src="/assets/icons/logout.png" alt="Cerrar Sesión" class="nav-icon">
+                    Cerrar Sesión
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Cargar Seudónimos</h1>
+                <div class="header-actions">
+                    <a href="dashboard.html" class="btn btn-secondary">← Volver</a>
+                </div>
+            </header>
+
+            <div class="section form-section">
+                <h2>Agregar Nuevos Seudónimos</h2>
+                <p class="section-description">
+                    Ingresa nombres neutros o positivos que estarán disponibles para que los pacientes elijan.
+                    Separa cada seudónimo con una coma.
+                </p>
+
+                <form id="loadNamesForm">
+                    <div class="form-group">
+                        <label for="pseudonyms">Seudónimos (separados por coma)</label>
+                        <textarea id="pseudonyms" class="form-control"
+                            placeholder="Ej: Río, Montaña, Sol, Luna, Bosque, Estrella" rows="4" required></textarea>
+                        <small>Ejemplos: Río, Montaña, Sol, Luna, Bosque, Estrella, Viento, Flor, León, Águila</small>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Cargar Seudónimos
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Seudónimos Cargados</h2>
+                <p class="section-description">
+                    Estos son los seudónimos que actualmente están disponibles para los pacientes.
+                </p>
+
+                <div class="pseudonyms-container" id="loadedPseudonyms">
+                    <!-- Los seudónimos se cargarán con JavaScript -->
+                    <div class="loading">Cargando seudónimos...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+   <script src="../../js/load-names.js"></script>
+</body>
+
+</html>

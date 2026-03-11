@@ -1,0 +1,656 @@
+/* Estilos específicos para la página de historial */
+
+/* Información del paciente */
+.patient-info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.patient-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.patient-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), #3a5985);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.patient-details h2 {
+    margin: 0 0 10px 0;
+    color: var(--dark-color);
+    font-size: 1.8rem;
+}
+
+.patient-details p {
+    margin: 5px 0;
+    color: var(--gray-color);
+}
+
+.patient-contact {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.patient-contact p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.patient-status {
+    margin-left: auto;
+    text-align: center;
+    padding: 15px 25px;
+    border-radius: 10px;
+    min-width: 150px;
+}
+
+.patient-status.red {
+    background-color: #ffeaea;
+    color: var(--danger-color);
+}
+
+.patient-status.orange {
+    background-color: #fff3cd;
+    color: var(--warning-color);
+}
+
+.patient-status.green {
+    background-color: #e7f4e4;
+    color: var(--success-color);
+}
+
+.status-badge {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.status-score {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+/* Tarjetas de estadísticas */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card.mini {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-card.mini .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+}
+
+.stat-card.mini .stat-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--gray-color);
+}
+
+.stat-card.mini .stat-number {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Tabla de encuestas */
+.surveys-table {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.surveys-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.surveys-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.surveys-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.surveys-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.surveys-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Columnas específicas */
+.fecha-col {
+    white-space: nowrap;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.fecha-col small {
+    color: var(--gray-color);
+    font-weight: normal;
+    font-size: 0.85rem;
+}
+
+.score-col {
+    text-align: center;
+}
+
+.score-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 45px;
+    text-align: center;
+}
+
+.score-badge.score-low {
+    background-color: #ffeaea;
+    color: var(--danger-color);
+}
+
+.score-badge.score-medium {
+    background-color: #fff3cd;
+    color: var(--warning-color);
+}
+
+.score-badge.score-high {
+    background-color: #e7f4e4;
+    color: var(--success-color);
+}
+
+.comment-col {
+    max-width: 300px;
+}
+
+.comment-preview {
+    margin: 0;
+    color: var(--gray-color);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.no-comment {
+    margin: 0;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.actions-col {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.actions-col .btn-small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.no-action {
+    color: #999;
+    font-style: italic;
+}
+
+/* Modal de comentario */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.comment-full {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-wrap;
+    border: 1px solid #eee;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    text-align: right;
+}
+
+/* Estados vacío/error */
+.empty-state, .error-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px dashed #dee2e6;
+    margin: 20px 0;
+}
+
+.empty-icon, .error-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.empty-state h3, .error-state h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.empty-state p, .error-state p {
+    color: var(--gray-color);
+    margin-bottom: 20px;
+}
+
+.error-state {
+    border-color: #f8d7da;
+    background-color: #fff5f5;
+}
+
+.error-state .error-icon {
+    color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .patient-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .patient-status {
+        margin-left: 0;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .surveys-table {
+        font-size: 0.9rem;
+    }
+    
+    .surveys-table th,
+    .surveys-table td {
+        padding: 12px 8px;
+    }
+    
+    .comment-col {
+        max-width: 150px;
+    }
+    
+    .modal-content {
+        margin: 20% auto;
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .surveys-table {
+        font-size: 0.8rem;
+    }
+    
+    .score-badge {
+        padding: 5px 10px;
+        min-width: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .actions-col .btn-small {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================================== */
+/* ESTILOS PARA SEMÁFORO DE RIESGO (semaphore.html) */
+/* =========================================== */
+
+.tarjetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta-paciente {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-paciente:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-header {
+    color: white;
+    padding: 22px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-header h3 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.puntuacion {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.tarjeta-body {
+    padding: 26px;
+    color: #222;
+}
+
+.tarjeta-body p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.tendencia {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tendencia-icono {
+    font-size: 20px;
+}
+
+.tendencia-icono.ascendente {
+    color: #2a9d8f;
+}
+
+.tendencia-icono.descendente {
+    color: #e63946;
+}
+
+.tendencia-icono.estable {
+    color: #666;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+.comentario {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.comentario span {
+    color: #555;
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.comentario.vacio {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.tarjeta-acciones {
+    display: flex;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.tarjeta-acciones .btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.alerta-tarjeta {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    color: #856404;
+    font-weight: bold;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+#contactInfo p {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+#contactInfo strong {
+    color: var(--primary-color);
+}
+
+.modal-actions {
+    margin-top: 25px;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tarjetas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjeta-acciones {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        margin: 20% auto;
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Estilos del semáforo */
+.semaphore-legend {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 250px;
+}
+
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.legend-color.red {
+    background-color: #e63946;
+}
+
+.legend-color.orange {
+    background-color: #ff9f1c;
+}
+
+.legend-color.green {
+    background-color: #2a9d8f;
+}
+
+.legend-content h4 {
+    margin: 0 0 5px 0;
+}
+
+.legend-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial del Paciente - Sistema Psicológico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin-styles.css">
+    <link rel="stylesheet" href="../../css/history.css">
+</head>
+<body>
+    <!-- VERIFICACIÓN INMEDIATA -->
+    <script>
+        if (localStorage.getItem('psychologistLoggedIn') !== 'true') {
+            window.location.href = '../auth/login.html';
+        }
+    </script>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <img src="/assets/icons/psicologia.svg" alt="Psicología" class="nav-icon">
+                    <div>
+                        <h3>Psicóloga Sofi</h3>
+                        <p class="user-role">Administradora</p>
+                    </div>
+                </div>
+            </div>
+            
+              <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <img src="/assets/icons/dashboard.svg" alt="Dashboard" class="nav-icon">
+                    Dashboard
+                </a>
+                <a href="load-names.html" class="nav-item">
+                    <img src="/assets/icons/seudonimo.svg" alt="seudonimo" class="nav-icon"> 
+                    Cargar Seudónimos
+                </a>
+                <a href="register-patient.html" class="nav-item">
+                    <img src="/assets/icons/paciente.svg" alt="Paciente" class="nav-icon">
+                    Registrar Paciente
+                </a>
+                <a href="semaphore.html" class="nav-item">
+                    <img src="/assets/icons/semaphore.png" alt="Semáforo" class="nav-icon">
+                    Semáforo de Riesgo
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <img src="/assets/icons/logout.png" alt="Cerrar Sesión" class="nav-icon">
+                    Cerrar Sesión
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="pageTitle">Historial del Paciente</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="window.history.back()">
+                        ← Volver
+                    </button>
+                </div>
+            </header>
+            
+            <div class="section">
+                <!-- Información del paciente -->
+                <div class="patient-info-card" id="patientInfo">
+                    <div class="loading">Cargando información del paciente...</div>
+                </div>
+                
+                <!-- Estadísticas -->
+                <div class="stats-cards">
+                    <div class="stat-card mini">
+                        <div class="stat-icon green">📊</div>
+                        <div class="stat-info">
+                            <h3>Promedio Actual</h3>
+                            <p class="stat-number" id="avgScore">0.0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card mini">
+                        <div class="stat-icon blue">📅</div>
+                        <div class="stat-info">
+                            <h3>Total Encuestas</h3>
+                            <p class="stat-number" id="totalSurveys">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card mini">
+                        <div class="stat-icon orange">📈</div>
+                        <div class="stat-info">
+                            <h3>Tendencia</h3>
+                            <p class="stat-number" id="trend">Estable</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Historial de encuestas -->
+                <div class="section">
+                    <h2>Historial Completo de Encuestas</h2>
+                    <p class="section-description">
+                        Todas las encuestas completadas por el paciente, ordenadas de más reciente a más antigua.
+                    </p>
+                    
+                    <div id="surveysContainer">
+                        <div class="loading">Cargando historial de encuestas...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para ver comentario completo -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="cerrarComentarioModal()">&times;</span>
+            <h3>💬 Comentario Completo</h3>
+            <div class="comment-full" id="fullComment">
+                <!-- Comentario completo se mostrará aquí -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="cerrarComentarioModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+     <script src="../../js/history.js"></script>
+</body>
+</html>

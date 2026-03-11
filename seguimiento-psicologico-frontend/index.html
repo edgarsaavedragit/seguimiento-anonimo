@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Seguimiento Psicológico Anónimo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="index-container">
+        <!-- Header con navegación -->
+        <header class="index-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <h1>PsicoSeguimiento</h1>
+                </div>
+                <nav class="index-nav">
+                    <a href="#roles" class="nav-link">¿Cómo deseas acceder?</a>
+                    <a href="#como-funciona" class="nav-link">¿Cómo funciona?</a>
+                    <a href="#beneficios" class="nav-link">Beneficios</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Seguimiento Psicológico <span class="highlight">Anónimo</span></h1>
+                    <p class="hero-subtitle">
+                        Un sistema seguro que protege la identidad de tus pacientes mientras
+                        monitorea su bienestar emocional semana a semana.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Confidencial</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">🔒</span>
+                            <span class="stat-label">Seguro</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">📊</span>
+                            <span class="stat-label">En Tiempo Real</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-element">
+                        <div class="element-1">🛡️</div>
+                        <div class="element-2">💭</div>
+                        <div class="element-3">📈</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selección de Rol -->
+        <section class="role-section" id="roles">
+            <h2 class="section-title">¿Cómo deseas acceder?</h2>
+            <p class="section-subtitle">Selecciona tu perfil para ingresar al sistema</p>
+
+            <div class="role-cards">
+                <div class="role-card psicologa-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Panel de Psicóloga</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Gestiona pacientes de forma privada</li>
+                            <li><i class="fas fa-check-circle"></i> Visualiza semáforo de riesgo emocional</li>
+                            <li><i class="fas fa-check-circle"></i> Genera enlaces de invitación únicos</li>
+                            <li><i class="fas fa-check-circle"></i> Monitorea tendencias de bienestar</li>
+                            <li><i class="fas fa-check-circle"></i> Accede a historial completo</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="pages/auth/login.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt"></i> Acceder como Psicóloga
+                        </a>
+                    </div>
+                </div>
+
+                <div class="role-card paciente-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                        <h3>Acceso Paciente</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><i class="fas fa-shield-alt"></i> Identidad completamente anónima</li>
+                            <li><i class="fas fa-comment-medical"></i> Diario personal seguro</li>
+                            <li><i class="fas fa-chart-line"></i> Seguimiento de tu progreso</li>
+                            <li><i class="fas fa-lock"></i> Comunicación confidencial</li>
+                            <li><i class="fas fa-heart"></i> Atención personalizada</li>
+                        </ul>
+                        <div class="patient-access-info">
+                            <p><i class="fas fa-info-circle"></i> <strong>¿Eres paciente?</strong> Accede con el enlace
+                                único que te envió tu psicóloga.</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#como-acceder" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-question-circle"></i> ¿Cómo acceder?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Funciona -->
+        <section class="how-it-works" id="como-funciona">
+            <h2 class="section-title">¿Cómo funciona el sistema?</h2>
+            <p class="section-subtitle">Un proceso seguro en 4 pasos simples</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Registro Seguro</h3>
+                        <p>La psicóloga registra al paciente de forma privada y genera un enlace único.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Identidad Anónima</h3>
+                        <p>El paciente elige un seudónimo (ej: "Río", "Montaña") para proteger su identidad.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Seguimiento Semanal</h3>
+                        <p>El paciente completa encuestas periódicas sobre su bienestar emocional.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Monitoreo Profesional</h3>
+                        <p>La psicóloga visualiza tendencias e identifica necesidades de atención.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="benefits-section" id="beneficios">
+            <h2 class="section-title">Beneficios Clave</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Anonimato Garantizado</h3>
+                    <p>Los pacientes se expresan libremente sin temor al juicio, usando identidades secretas.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Datos en Tiempo Real</h3>
+                    <p>Visualización inmediata del estado emocional a través del semáforo de riesgo.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Alertas Tempranas</h3>
+                    <p>Detección proactiva de situaciones que requieren atención inmediata.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Acceso Desde Cualquier Lugar</h3>
+                    <p>Plataforma responsive que funciona en computadoras, tablets y celulares.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información para Pacientes -->
+        <section class="patient-info" id="como-acceder">
+            <div class="patient-info-content">
+                <div class="info-text">
+                    <h2 class="section-title">¿Eres paciente?</h2>
+                    <p class="section-subtitle">Accede de forma segura a tu seguimiento</p>
+
+                    <div class="access-steps">
+                        <div class="access-step">
+                            <span class="step-icon">1️⃣</span>
+                            <div>
+                                <h4>Recibe tu enlace único</h4>
+                                <p>Tu psicóloga te enviará un enlace personalizado por WhatsApp o correo.</p>
+                            </div>
+                        </div>
+
+                        <div class="access-step">
+                            <span class="step-icon">2️⃣</span>
+                            <div>
+                                <h4>Elige tu identidad secreta</h4>
+                                <p>Selecciona un seudónimo que te represente durante todo el proceso.</p>
+                            </div>
+                        </div>
+
+                        <div class="access-step">
+                            <span class="step-icon">3️⃣</span>
+                            <div>
+                                <h4>Completa tu seguimiento</h4>
+                                <p>Responde las encuestas semanales de forma honesta y confidencial.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <p><strong>Tu privacidad es nuestra prioridad:</strong> Solo tu psicóloga conoce tu identidad
+                            real. Todas las comunicaciones son encriptadas.</p>
+                    </div>
+                </div>
+
+                <div class="info-image">
+                    <div class="secure-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Sistema Certificado</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="index-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🧠</span>
+                        <h3>PsicoSeguimiento</h3>
+                    </div>
+                    <p>Sistema de seguimiento psicológico anónimo diseñado para proteger la privacidad y mejorar la
+                        atención terapéutica.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/auth/login.html">Panel Psicóloga</a></li>
+                        <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#como-acceder">Acceso Pacientes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> soporte@psicoseguimiento.com</li>
+                        <li><i class="fas fa-phone"></i> +57 300 123 4567</li>
+                        <li><i class="fas fa-clock"></i> Soporte: L-V 8am-6pm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 PsicoSeguimiento. Todos los derechos reservados. | Sistema seguro y confidencial</p>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fas fa-lock"></i> SSL Seguro</span>
+                    <span class="badge"><i class="fas fa-shield-alt"></i> HIPAA Compatible</span>
+                    <span class="badge"><i class="fas fa-user-secret"></i> 100% Anónimo</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+     <script src="js/index.js"></script>
+</body>
+
+</html>

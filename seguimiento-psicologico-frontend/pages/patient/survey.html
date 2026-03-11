@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Seguimiento - Sistema Psicológico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/patient-styles.css">
+</head>
+
+<body>
+    <div class="patient-container">
+        <div class="patient-header">
+            <h1>📊 Tu Seguimiento Semanal</h1>
+            <p class="patient-subtitle">
+                Comparte honestamente cómo te has sentido esta semana. Tu psicóloga verá esta información de forma
+                anónima.
+            </p>
+        </div>
+
+        <div class="survey-container">
+            <div class="alias-badge" id="aliasDisplay">
+                Cargando identidad...
+            </div>
+
+            <form id="surveyForm">
+                <!-- Eje Clínico -->
+                <div class="survey-section">
+                    <h3>
+                        <span class="section-icon">❤️</span>
+                        ¿Cómo me siento?
+                    </h3>
+                    <p>Evalúa tu bienestar emocional general esta semana.</p>
+
+                    <div class="slider-container">
+                        <div class="slider-header">
+                            <div class="slider-label">Bienestar Emocional</div>
+                            <div class="slider-value-display">
+                                <span class="slider-value" id="ejeClinicoValue">5</span>
+                                <span class="slider-emoji" id="ejeClinicoEmoji">😐</span>
+                            </div>
+                        </div>
+
+                        <input type="range" id="ejeClinico" min="1" max="10" value="5" step="1" class="slider">
+
+                        <div class="slider-labels">
+                            <span>1 - Muy mal</span>
+                            <span>5 - Neutral</span>
+                            <span>10 - Excelente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eje Servicio -->
+                <div class="survey-section">
+                    <h3>
+                        <span class="section-icon">👩‍⚕️</span>
+                        ¿Cómo estuvo la sesión?
+                    </h3>
+                    <p>Valora tu experiencia con la psicóloga en la última sesión.</p>
+
+                    <div class="slider-container">
+                        <div class="slider-header">
+                            <div class="slider-label">Calidad del Servicio</div>
+                            <div class="slider-value-display">
+                                <span class="slider-value" id="ejeServicioValue">5</span>
+                                <span class="slider-emoji" id="ejeServicioEmoji">😐</span>
+                            </div>
+                        </div>
+
+                        <input type="range" id="ejeServicio" min="1" max="10" value="5" step="1" class="slider">
+
+                        <div class="slider-labels">
+                            <span>1 - Muy mal</span>
+                            <span>5 - Neutral</span>
+                            <span>10 - Excelente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eje Cualitativo -->
+                <div class="survey-section">
+                    <h3>
+                        <span class="section-icon">📝</span>
+                        Diario Personal
+                    </h3>
+                    <p>Comparte libremente tus pensamientos, sentimientos o reflexiones de la semana.</p>
+
+                    <div class="diary-container">
+                        <div class="diary-header">
+                            <span class="diary-icon">💭</span>
+                            <div>
+                                <h4>Espacio para tu reflexión</h4>
+                                <p>Escribe lo que quieras compartir. Este espacio es completamente confidencial.</p>
+                            </div>
+                        </div>
+
+                        <textarea id="ejeCualitativo"
+                            placeholder="Esta semana me sentí... / Logré... / Me costó... / Quiero trabajar en..."
+                            rows="8"></textarea>
+
+                        <p class="diary-hint">
+                            💡 Tip: Puedes escribir sobre logros, desafíos, insights o cualquier cosa que quieras
+                            procesar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="form-group" style="text-align: center; margin-top: 40px;">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        📤 Enviar Mi Seguimiento
+                    </button>
+
+                    <p class="form-help">
+                        <small>
+                            ⏱️ Esta encuesta toma aproximadamente 3 minutos completar.<br>
+                            🔒 Tus respuestas son completamente anónimas y confidenciales.
+                        </small>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Sistema seguro y confidencial | Tu honestidad ayuda en tu proceso terapéutico</p>
+        </footer>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/patient.js"></script>
+    <script src="../../js/survey.js"></script> 
+</body>
+
+</html>

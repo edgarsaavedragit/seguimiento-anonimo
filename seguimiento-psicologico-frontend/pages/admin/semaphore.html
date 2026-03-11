@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo de Riesgo - Panel Psicóloga</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin-styles.css">
+    <link rel="stylesheet" href="../../css/history.css">
+</head>
+
+<body>
+    <!-- VERIFICACIÓN INMEDIATA -->
+    <script>
+        if (localStorage.getItem('psychologistLoggedIn') !== 'true') {
+            window.location.href = '../auth/login.html';
+        }
+    </script>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <img src="/assets/icons/psicologia.svg" alt="Psicología" class="nav-icon">
+                    <div>
+                        <h3>Psicóloga Sofi</h3>
+                        <p class="user-role">Administradora</p>
+                    </div>
+                </div>
+            </div>
+
+               <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <img src="/assets/icons/dashboard.svg" alt="Dashboard" class="nav-icon">
+                    Dashboard
+                </a>
+                <a href="load-names.html" class="nav-item">
+                    <img src="/assets/icons/seudonimo.svg" alt="seudonimo" class="nav-icon"> 
+                    Cargar Seudónimos
+                </a>
+                <a href="register-patient.html" class="nav-item">
+                    <img src="/assets/icons/paciente.svg" alt="Paciente" class="nav-icon">
+                    Registrar Paciente
+                </a>
+                <a href="semaphore.html" class="nav-item active">
+                    <img src="/assets/icons/semaphore.png" alt="Semáforo" class="nav-icon">
+                    Semáforo de Riesgo
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <img src="/assets/icons/logout.png" alt="Cerrar Sesión" class="nav-icon">
+                    Cerrar Sesión
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Semáforo de Riesgo</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="refreshSemaphore()">
+                        🔄 Actualizar
+                    </button>
+                </div>
+            </header>
+
+            <div class="section">
+                <h2>Estado Actual de Pacientes</h2>
+                <p class="section-description">
+                    Vista general del estado emocional de todos los pacientes basado en sus últimas respuestas.
+                    Los colores indican el nivel de atención requerido.
+                </p>
+
+                <!-- Semáforo Legend -->
+                <div class="semaphore-legend">
+                    <div class="legend-item">
+                        <div class="legend-color red"></div>
+                        <div class="legend-content">
+                            <h4>🔴 Alerta Roja</h4>
+                            <p>Promedio menor a 5. Atención urgente requerida.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color orange"></div>
+                        <div class="legend-content">
+                            <h4>🟠 Naranja/Neutral</h4>
+                            <p>Promedio entre 5 y 7. Estado regular, monitoreo necesario.</p>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-color green"></div>
+                        <div class="legend-content">
+                            <h4>🟢 Verde/Positivo</h4>
+                            <p>Promedio mayor a 7. Estado óptimo de bienestar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semáforo Container - Aquí se cargarán las tarjetas -->
+                <div id="semaphoreContainer">
+                    <div class="loading">Cargando datos del semáforo...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/semaphore.js"></script> 
+</body>
+
+</html>

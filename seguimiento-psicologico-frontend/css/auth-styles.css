@@ -1,0 +1,139 @@
+/* Estilos específicos para login */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--primary-color) 0%, #3a5985 100%)
+}
+
+.auth-box {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.auth-logo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 4px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: #fee;
+    color: var(--danger-color);
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+    display: none;
+}
+
+/* Estilos para página de recuperación */
+.message {
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    display: none;
+    font-size: 0.95rem;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.message.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    display: block;
+}
+
+.forgot-password {
+    color: #4361ee;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #3a0ca3;
+    text-decoration: underline;
+}
+
+.form-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+}
+

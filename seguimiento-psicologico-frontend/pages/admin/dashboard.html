@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Panel Psicóloga</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin-styles.css">
+</head>
+
+<body>
+    <script>
+        // VERIFICACIÓN INMEDIATA 
+        if (localStorage.getItem('psychologistLoggedIn') !== 'true') {
+            window.location.href = '../auth/login.html';
+        }
+    </script>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <img src="/assets/icons/psicologia.svg" alt="Psicología" class="nav-icon">
+                    <div>
+                        <h3>Psicóloga Sofi</h3>
+                        <p class="user-role">Administradora</p>
+                    </div>
+                </div>
+            </div>
+
+             <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <img src="/assets/icons/dashboard.svg" alt="Dashboard" class="nav-icon">
+                    Dashboard
+                </a>
+                <a href="load-names.html" class="nav-item">
+                    <img src="/assets/icons/seudonimo.svg" alt="seudonimo" class="nav-icon"> 
+                    Cargar Seudónimos
+                </a>
+                <a href="register-patient.html" class="nav-item">
+                    <img src="/assets/icons/paciente.svg" alt="Paciente" class="nav-icon">
+                    Registrar Paciente
+                </a>
+                <a href="semaphore.html" class="nav-item">
+                    <img src="/assets/icons/semaphore.png" alt="Semáforo" class="nav-icon">
+                    Semáforo de Riesgo
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <img src="/assets/icons/logout.png" alt="Cerrar Sesión" class="nav-icon">
+                    Cerrar Sesión
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="location.href='register-patient.html'">
+                        + Nuevo Paciente
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                     <img src="/assets/icons/paciente.svg" alt="Paciente" class="nav-icon">
+                    <div class="stat-info">
+                        <h3>Pacientes Activos</h3>
+                        <p class="stat-number" id="activePatients">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">📝</div>
+                    <div class="stat-info">
+                        <h3>Encuestas Hoy</h3>
+                        <p class="stat-number" id="todaySurveys">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">⚠️</div>
+                    <div class="stat-info">
+                        <h3>Alertas Activas</h3>
+                        <p class="stat-number" id="activeAlerts">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <img src="/assets/icons/seudonimo.svg" alt="seudonimo" class="nav-icon"> 
+                    <div class="stat-info">
+                        <h3>Seudónimos Disponibles</h3>
+                        <p class="stat-number" id="availablePseudonyms">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="section">
+                <h2>Actividad Reciente</h2>
+                <div class="activity-list" id="recentActivity">
+                    <!-- Actividad se cargará con JavaScript -->
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section">
+                <h2>Acciones Rápidas</h2>
+                <div class="quick-actions">
+                    <button class="quick-action-btn" onclick="location.href='load-names.html'">
+                        <span class="action-icon">➕</span>
+                        Cargar Nuevos Seudónimos
+                    </button>
+                    <button class="quick-action-btn" onclick="location.href='semaphore.html'">
+                        <img src="/assets/icons/semaphore.png" alt="Semáforo" class="nav-icon">
+                        Ver Semáforo Completo
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/dashboard.js"></script>
+</body>
+
+</html>

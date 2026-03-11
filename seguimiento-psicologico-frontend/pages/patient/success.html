@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! - Sistema Psicológico</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/patient-styles.css">
+</head>
+
+<body>
+    <div class="patient-container">
+        <div class="success-container">
+            <div class="success-icon">✅</div>
+            <h1>¡Encuesta Enviada Exitosamente!</h1>
+
+            <p>
+                Gracias por compartir tu experiencia. Tu información ha sido registrada de forma anónima
+                y será de gran ayuda para tu proceso terapéutico.
+            </p>
+
+            <div class="success-details">
+                <div class="detail-item">
+                    <div class="detail-icon">🛡️</div>
+                    <div>
+                        <h4>Tu privacidad está protegida</h4>
+                        <p>Solo tu psicóloga puede ver esta información vinculada a tu identidad real.</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">💭</div>
+                    <div>
+                        <h4>Reflexión registrada</h4>
+                        <p>Tu diario personal ha sido guardado y estará disponible para tu próxima sesión.</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div>
+                        <h4>Próximo seguimiento</h4>
+                        <p>Te invitaremos a completar la próxima encuesta en una semana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-actions">
+                <button class="btn btn-primary" onclick="location.href='survey.html'">
+                    📝 Completar Otra Encuesta
+                </button>
+
+                <!-- Botón modificado -->
+                <button class="btn btn-secondary" onclick="pacienteLogout()">
+                    🏠 Cerrar Sesión y Volver
+                </button>
+            </div>
+
+            <div class="confidentiality-notice">
+                <p>🔒 <strong>Recordatorio:</strong> Este sistema mantiene tu anonimato. Tu psicóloga solo ve tu
+                    seudónimo junto con tus respuestas.</p>
+            </div>
+        </div>
+    </div>
+
+   <script src="../../js/utils.js"></script>
+    <script src="../../js/success.js"></script>
+</body>
+
+</html>
